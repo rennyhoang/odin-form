@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+  <div id="container">
+    <div id="sidebar">
+      <img src="img/bg.jpg" alt="" id="sidebar-bg">
+      <div id="sidebar-header">
+        <img src="img/odin-lined.png" id="odin-logo">
+        <p id="sidebar-text">ODIN</p>
+      </div>
+    </div>
+    <div id="content">
+      <h1 id="content-text">This is not a real online service! You know you need something like this in your life to
+        help you realize your deepest dreams. <br>Sign up <em>now</em> to get started.<br><br> You <em>know</em> you
+        want
+        to.</h1>
+      <form>
+        <div id="form-container">
+          <h1 id="form-title">Let's do this!</h1>
+          <div id="input-fields">
+            <ul>
+              <li>
+                <label for="first-name">FIRST NAME</label>
+                <input type="text" name="first-name" id="first-name" value="Thor">
+              </li>
+              <li>
+                <label for="email">EMAIL</label>
+                <input type="email" name="email" id="email">
+              </li>
+              <li>
+                <label for="password">PASSWORD</label>
+                <input type="password" name="password" id="password">
+              </li>
+            </ul>
+            <ul>
+              <li>
+                <label for="last-name">LAST NAME</label>
+                <input type="text" name="last-name" id="last-name" value="Odinson">
+              </li>
+              <li>
+                <label for="phone-number">PHONE NUMBER</label>
+                <input type="tel" name="phone-number" id="phone-number">
+              </li>
+              <li>
+                <label for="confirm-password">CONFIRM PASSWORD</label>
+                <input type="password" name="confirm-password" id="confirm-password">
+              </li>
+            </ul>
+          </div>
+        </div>
+        <button type="submit" id="submit-button">Create Account</button>
+        <p id="login-text">Already have an account? <a>Login in</a></p>
+      </form>
+    </div>
+  </div>
+</body>
+
+<script>
+  let password = document.getElementById("password");
+  let confirmPassword = document.getElementById("confirm-password");
+
+  password.addEventListener("select", checkPasswords)
+
+  function checkPasswords() {
+    let getPassword = document.getElementById("password").value;
+    let getConfirmPassword = document.getElementById("confirm-password").value;
+    console.log(getPassword)
+    console.log(getConfirmPassword)
+    if (getPassword != getConfirmPassword) {
+      let password = document.getElementById("password");
+      let confirmPassword = document.getElementById("confirm-password");
+      password.style.borderColor = 'red';
+    }
+    else {
+      password.style.borderColor = "lightgray";
+    }
+  }
+</script>
+
+</html>
